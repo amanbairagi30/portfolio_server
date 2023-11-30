@@ -50,7 +50,7 @@ try {
 
 const message = {
      from : process.env.EMAIL,
-     to : "arjunsuthar2112@gmail.com",
+     to : "amanbairagi1089@gmail.com",
      subject : "There is a new connection here ",
      text : `Greetings from ${username},\nWhatsApp number: ${number}\nemail : ${email}\ni want to say ${mailmessage}`
 } 
