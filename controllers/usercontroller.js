@@ -11,19 +11,13 @@ exports.registerUser = async (req, res, next) => {
 
         const newUser = new User(req.body);
         await newUser.save();
-
-        res.send({
-            success: true,
-            message: "Thanks for contacting us , we will get back to you in 24 hours"
-        })
+        // console.log(newUser)
+        // console.log("In the register")
         next();
+        // console.log("after register")
  
     } catch (error) {
-        res.send({
-            success: false,
-            message: error.message,
-        } 
-        )
+        next(error);
     }
 
 }
@@ -31,6 +25,7 @@ exports.registerUser = async (req, res, next) => {
 
 
 exports.sendMail = async (req, res) => {
+    // console.log("--> next ,In the mail ")
 
     let { username, email, number, mailmessage } = req.body;
 
@@ -57,7 +52,7 @@ exports.sendMail = async (req, res) => {
 
             res.send({
                 success: true,
-                message: "email sent sucessfully"
+                message: "Thanks for contacting us , we will get back to you in 24 hours"
             })
         }
 
